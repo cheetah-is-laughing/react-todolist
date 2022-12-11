@@ -46,7 +46,7 @@ const startServer = () => {
 
   // healthCheck
   app.get("/ping", (req, res, next) =>
-    res.status(200).json({ message: "pong 🏌️" })
+    res.status(200).json({ message: "pong 🏓" })
   );
 
   // error
@@ -58,8 +58,6 @@ const startServer = () => {
   });
 
   app.listen(config.server.port, () => {
-    Logging.info(
-      `Server is running on http://localhost:${config.server.port} ✔️`
-    );
+    Logging.info(`Server is listening on port ${config.server.port} ✔️`);
   });
 };
