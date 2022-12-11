@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { config } from "./config/config";
 import Logging from "./library/Logging";
 import todoRoutes from "./routes/TodoRoutes";
+import cors from "cors";
 
 const app = express();
 
@@ -41,7 +42,8 @@ const startServer = () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
-  // routes
+  // routes & solve cors
+  app.use(cors());
   app.use("/todos", todoRoutes);
 
   // healthCheck
